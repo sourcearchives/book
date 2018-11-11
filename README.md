@@ -17,7 +17,7 @@ This repository was created to host the desktop-publishing source of the open-so
 ## Install
 
 You'll need :
-* **A font pack** : the official Pepper&Carrot open fonts [here](https://github.com/Deevad/peppercarrot_fonts).
+* **A font pack** : the official Pepper&Carrot open fonts [here](https://framagit.org/peppercarrot/webcomics/tree/master/fonts).
 * **Scribus 1.5.4** : to edit the ```*.sla``` files. On 'buntu 16.04, [this PPA](https://launchpad.net/~scribus/+archive/ubuntu/ppa).
 * **Krita 3.x** : to edit the ```*.kra``` files. on 'buntu 16.04, recent Appimage works perfectly.
 * **The comic pages** :

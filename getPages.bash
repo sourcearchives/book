@@ -21,10 +21,9 @@ lang="en"
 if [[ "$1" =~ ^[a-z]{2}$ ]]; then
    lang="$1"
 fi
-urlpath="https://www.peppercarrot.com/downloader.php?page=download\&l=""$lang"
-file="peppercarrot-render-pack.zip"
-horodate=$(date +%Y-%m-%d_%Hh%M)
-tmppath="/tmp/$horodate-pagedownloader"
+
+file="$(date --utc +%Y-%m-%d)_${lang}_peppercarrot-all-pages.zip"
+urlpath="https://www.peppercarrot.com/tmp/${file}"
 workingpath="${PWD}/lang/${lang}"
 
 if [ ! -d "$workingpath"/"pages" ]; then
@@ -32,17 +31,21 @@ if [ ! -d "$workingpath"/"pages" ]; then
    exit
 fi
 
-echo "${Green}=> Downloading the [$lang] archive from peppercarrot.com .${Off}"
-echo "${Blue}   Note: it's a 400MB download, it can be long.${Off}"
-echo ""
-mkdir "$tmppath"
-echo "wget" "$urlpath" "-O" "$tmppath"/"$file"
-wget "$urlpath" -O "$tmppath"/"$file"
+echo "${Green}=> Creating image cache to download in step 2. ${Off}"
+curl "https://www.peppercarrot.com/downloader.php?l=${lang}" &> /dev/null
 
-if [ -f "$tmppath"/"$file" ]; then
-   unzip -o "$tmppath"/"$file" -d "$workingpath"/"pages"
+echo ""
+
+echo "${Green}=> Downloading the [$lang] archive from peppercarrot.com .${Off}"
+echo "${Blue}   Note: it's a 500MB download, it can be long.${Off}"
+wget --continue --output-document="/tmp/${file}" "${urlpath}"
+
+echo ""
+
+if [ -f "/tmp/${file}" ]; then
+   unzip -o "/tmp/${file}" -d "$workingpath"/"pages"
    echo "${Green}=> Unzip archive done. ${Off} "
-   rm "$tmppath"/"$file"
+   rm "/tmp/${file}"
 else
    echo "=> Downloading ${Red} Error: $file is missing. ${Off} "
 fi
@@ -59,5 +62,4 @@ else
    echo ""
 fi
 
-rm -rf "$tmppath"
 exit

@@ -21,7 +21,7 @@ This repository was created to host the desktop-publishing source and tooling to
 > **Note:** If you want to use a language other than English (`en`), please initialise a new translation by executing `bash initLang.bash fr` (where *fr* is the new language you want using the [short code form](https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes)) before downloading the comic pages.
 
 You will need to download or install the following to design, build, and publish Pepper&Carrot:
-- **A font pack** Download and install the official Pepper&Carrot open fonts [from here](https://framagit.org/peppercarrot/webcomics/tree/master/fonts).
+- **A font pack** Download and install the official Pepper&Carrot open fonts [from here](https://framagit.org/peppercarrot/fonts#peppercarrot-fonts).
 - **Scribus 1.5.4 or later** Download Scribus for editing book layouts (`*.sla` files).
   - On 'buntu 16.04 please use [this PPA](https://launchpad.net/~scribus/+archive/ubuntu/ppa).
   - On Debian please [download the official](https://www.scribus.net/downloads/unstable-branch/) development AppImage, make the file executable, and run it.

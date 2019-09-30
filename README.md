@@ -1,5 +1,7 @@
 # Pepper&Carrot Book
 
+(Archived until mid 2020)
+
 This repository was created to host the desktop-publishing source and tooling to publish the open-source first book of [Pepper&Carrot](https://www.peppercarrot.com) comic.
 
 ![alt tag](https://www.peppercarrot.com/extras/forum/2017-03-23_screenshot_182109_net.jpg "Book")
@@ -38,12 +40,9 @@ You will need to download or install the following to design, build, and publish
 	* ```/``` Contains Scribus ```*.sla``` files
 	* ```/pages``` Contains the comic page sources (not delivered via git, see **Install**).
 
-## Current Limitations
-
-**STATUS:** needs printer info (ISBN?colorprofile) + proofread texts.
-
 ## Changelog
 
+* **2019-10-01**: Archiving the project (to better start on another repo: book-print )
 * **2017-11-06**: Re-structure to allow translations in multiple languages.
 * **2017-06-09**: Prefinal: All header, footer, gallery, colophon, frontpage, shrink from 80 pages to 68 pages, no need 'Inside' anymore.
 * **2017-06-08**: Split gfx and text: more flexibility for cleaning pages footer and adding headers.
